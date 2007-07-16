@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=TermIt
+Comment=Simple terminal emulator with tabs
+Comment[pl]=Prosty emulator terminala z kartami
+Exec=termit
+Icon=termit.png
+Terminal=false
+Type=Application
+Encoding=UTF-8
+Categories=GTK;Utility;TerminalEmulator;
+# vi: encoding=utf-8
