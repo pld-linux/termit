@@ -68,5 +68,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README doc/termit.example
 %attr(755,root,root) %{_bindir}/*
-%{_desktopdir}/%{name}.ddesktop
+%{_desktopdir}/%{name}.desktop
 %{_pixmapsdir}/%{name}.png
