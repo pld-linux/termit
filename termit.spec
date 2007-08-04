@@ -13,7 +13,9 @@ URL:		http://code.google.com/p/termit/wiki/TermIt
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gettext-devel
-BuildRequires:	vte-devel
+BuildRequires:	gtk+2-devel >= 2:2.8
+BuildRequires:	pkgconfig
+BuildRequires:	vte-devel >= 0.12
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -22,7 +24,7 @@ TermIt - simple terminal emulator based on vte library. Features:
  - bookmarks
  - changing tab name
  - changing font for tabs
- - encodings (all available from GTK2)
+ - encodings (all available from GTK+ 2)
 
 Configuration can be changed via $HOME/.termit file (example is
 provided).
@@ -33,9 +35,9 @@ TermIt - prosty emulator terminala oparty na bibliotece vte. Zawiera:
  - zakładki
  - możliwość zmiany nazw kart
  - możliwość zmiany fontów kart
- - obsługa wszystki kodowań znaków z GTK2
+ - obsługa wszystkich kodowań znaków z GTK+ 2
 
-konfiguracja może być zmieniana przez plik $HOME/.termit (przykład
+Konfiguracja może być zmieniana przez plik $HOME/.termit (przykład
 znajduje się w dokumentacji).
 
 %prep
