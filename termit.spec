@@ -1,12 +1,12 @@
 Summary:	TermIt - terminal emulator based on the vte library
 Summary(pl.UTF-8):	TermIt - emulator terminala oparty na bibliotece vte
 Name:		termit
-Version:	1.0.1
-Release:	2
+Version:	1.0.2
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://termit.googlecode.com/files/%{name}-%{version}.tar.gz
-# Source0-md5:	975fc6cbfbe59e81813a98ae03cf7108
+# Source0-md5:	9a9b1373cac9e9156fb761e0e23c5f9b
 Source1:	%{name}.desktop
 Source2:	%{name}.png
 URL:		http://code.google.com/p/termit/wiki/TermIt
