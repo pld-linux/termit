@@ -1,18 +1,16 @@
 Summary:	TermIt - terminal emulator based on the vte library
 Summary(pl.UTF-8):	TermIt - emulator terminala oparty na bibliotece vte
 Name:		termit
-Version:	1.0.2
+Version:	1.1.1
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://termit.googlecode.com/files/%{name}-%{version}.tar.gz
-# Source0-md5:	9a9b1373cac9e9156fb761e0e23c5f9b
+# Source0-md5:	bf9bb0cf20e6f934670e455ebf8926d4
 Source1:	%{name}.desktop
 Source2:	%{name}.png
 URL:		http://code.google.com/p/termit/wiki/TermIt
-BuildRequires:	autoconf
-BuildRequires:	automake
-BuildRequires:	gettext-devel
+BuildRequires:	cmake
 BuildRequires:	gtk+2-devel >= 2:2.8
 BuildRequires:	pkgconfig
 BuildRequires:	vte-devel >= 0.12
@@ -44,12 +42,7 @@ znajduje się w dokumentacji).
 %setup -q
 
 %build
-%{__gettextize}
-%{__aclocal}
-%{__autoconf}
-%{__autoheader}
-%{__automake}
-%configure
+%{__cmake} -D CMAKE_INSTALL_PREFIX:PATH="%{_prefix}" .
 %{__make}
 
 %install
@@ -68,7 +61,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README doc/termit.example
+%doc ChangeLog TODO doc/README doc/termit.example
 %attr(755,root,root) %{_bindir}/*
 %{_desktopdir}/%{name}.desktop
 %{_pixmapsdir}/%{name}.png
