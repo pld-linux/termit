@@ -1,17 +1,20 @@
 Summary:	TermIt - terminal emulator based on the vte library
 Summary(pl.UTF-8):	TermIt - emulator terminala oparty na bibliotece vte
 Name:		termit
-Version:	1.3.5
-Release:	2
+Version:	2.1
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://termit.googlecode.com/files/%{name}-%{version}.tar.bz2
-# Source0-md5:	3b54551b6b829006607f3f69beddbf84
+# Source0-md5:	7f386b4745080cfa544296890e85f4e7
 Source1:	%{name}.desktop
 Source2:	%{name}.png
+Patch0:		%{name}-FindLua51.patch
 URL:		http://code.google.com/p/termit/wiki/TermIt
-BuildRequires:	cmake
+BuildRequires:	cmake >= 2.6.1
 BuildRequires:	gtk+2-devel >= 2:2.8
+BuildRequires:	lua51-devel
+BuildRequires:	perl-base
 BuildRequires:	pkgconfig
 BuildRequires:	vte-devel >= 0.12
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -40,10 +43,13 @@ znajduje się w dokumentacji).
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{cmake} -D CMAKE_INSTALL_PREFIX:PATH="%{_prefix}" .
-%{__make}
+# fix --as-needed issue - ref: http://pld-linux.org/DevelopingPLD/AdvancedDeveloping/FixingAsNeeded
+%{__perl} -i -p -e 's/((\s-l\S+\s*?)+)((\s\S+\.o\s*?)+)(\s-o termit\s)/\5 \3 \1 /' src/CMakeFiles/termit.dir/link.txt
+%{__make} VERBOSE=1
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -61,7 +67,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc BUGS ChangeLog TODO doc/README doc/session.example doc/termit.example
+%doc ChangeLog TODO doc/README doc/init.lua.example doc/lua_api.txt
 %attr(755,root,root) %{_bindir}/*
+%{_mandir}/man1/*
 %{_desktopdir}/%{name}.desktop
 %{_pixmapsdir}/%{name}.png
