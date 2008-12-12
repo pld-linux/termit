@@ -1,6 +1,6 @@
-# TODO: change pl description
-Summary:	TermIt - terminal emulator based on the vte library
-Summary:	TermIt - vte könyvtáron alapuló terminál emulátor
+# TODO: update pl description and summary
+Summary:	TermIt - terminal emulator based on the vte library, extensible via lua
+Summary(hu.UTF-8):	TermIt - vte könyvtáron alapuló terminál emulátor, lua nyelven keresztül bővíthető
 Summary(pl.UTF-8):	TermIt - emulator terminala oparty na bibliotece vte
 Name:		termit
 Version:	2.1.1
