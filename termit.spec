@@ -1,4 +1,6 @@
+# TODO: change pl description
 Summary:	TermIt - terminal emulator based on the vte library
+Summary:	TermIt - vte könyvtáron alapuló terminál emulátor
 Summary(pl.UTF-8):	TermIt - emulator terminala oparty na bibliotece vte
 Name:		termit
 Version:	2.1.1
@@ -21,14 +23,28 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 TermIt - simple terminal emulator based on vte library. Features:
- - tabs
- - bookmarks
- - changing tab name
- - changing font for tabs
- - encodings (all available from GTK+ 2)
+ - multiple tabs
+ - switching encodings
+ - sessions
+ - configurable keybindings
+ - embedded Lua
+ - xterm-like dynamic window title
 
-Configuration can be changed via $HOME/.termit file (example is
-provided).
+Configuration can be changed via $HOME/.config/termit/init.lua file
+(example is provided).
+
+%description -l hu.UTF-8
+TermIt - egyszerű, a vte könyvtárra épülő terminál emulátor.
+Lehetőségek:
+ - több tab
+ - kódolás változtatása
+ - munkamenetek
+ - konfigurálható billentyűkombinációk
+ - beépített lua
+ - xterm-szerű dinamikus ablakcím
+
+A konfiguráció megváltoztatható a $HOME/.config/termit/init.lua fájl
+megváltoztatásával (példafájl van a csomagban).
 
 %description -l pl.UTF-8
 TermIt - prosty emulator terminala oparty na bibliotece vte. Zawiera:
