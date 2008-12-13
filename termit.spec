@@ -10,7 +10,6 @@ Source0:	http://termit.googlecode.com/files/%{name}-%{version}.tar.bz2
 # Source0-md5:	ce1dba707a8b803fcb21db4163c50a4a
 Source1:	%{name}.desktop
 Source2:	%{name}.png
-# Patch0:		%{name}-FindLua51.patch
 URL:		http://code.google.com/p/termit/wiki/TermIt
 BuildRequires:	cmake >= 2.6.1
 BuildRequires:	gtk+2-devel >= 2:2.8
@@ -59,13 +58,14 @@ $HOME/.config/termit/init.lua (przykład znajduje się w dokumentacji).
 
 %prep
 %setup -q
-# %patch0 -p1
 
 %build
-%{cmake} -D CMAKE_INSTALL_PREFIX:PATH="%{_prefix}" .
+%cmake . \
+	-DCMAKE_INSTALL_PREFIX:PATH="%{_prefix}" \
+	-DCMAKE_VERBOSE_MAKEFILE=ON
 # fix --as-needed issue - ref: http://pld-linux.org/DevelopingPLD/AdvancedDeveloping/FixingAsNeeded
 %{__perl} -i -p -e 's/((\s-l\S+\s*?)+)((\s\S+\.o\s*?)+)(\s-o termit\s)/\5 \3 \1 /' src/CMakeFiles/termit.dir/link.txt
-%{__make} VERBOSE=1
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
