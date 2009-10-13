@@ -1,13 +1,14 @@
+%define trunk	346
 Summary:	TermIt - terminal emulator based on the vte library, extensible via Lua
 Summary(hu.UTF-8):	TermIt - vte könyvtáron alapuló terminál emulátor, Lua nyelven keresztül bővíthető
 Summary(pl.UTF-8):	TermIt - emulator terminala oparty na bibliotece vte, rozszerzalny przez Lua
 Name:		termit
 Version:	2.2.0
-Release:	0.1
+Release:	0.%{trunk}.1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://termit.googlecode.com/files/%{name}-%{version}.tar.bz2
-# Source0-md5:	5f00b7c77930749c0d3af358e201b674
+Source0:	http://carme.pld-linux.org/~uzsolt/sources/%{name}-%{version}-%{trunk}.tar.bz2
+# Source0-md5:	89b84310d5511dd06d95c5980e37e65c
 Source1:	%{name}.desktop
 Source2:	%{name}.png
 URL:		http://code.google.com/p/termit/wiki/TermIt
@@ -57,7 +58,7 @@ Konfiguracja może być zmieniana przez plik
 $HOME/.config/termit/init.lua (przykład znajduje się w dokumentacji).
 
 %prep
-%setup -q
+%setup -q -n %{name}-%{version}-%{trunk}
 
 %build
 %cmake . \
@@ -85,7 +86,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc ChangeLog TODO doc/README doc/init.lua.example doc/lua_api.txt
+%doc ChangeLog TODO doc/README doc/rc.lua.example doc/lua_api.txt
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
 %{_desktopdir}/%{name}.desktop
