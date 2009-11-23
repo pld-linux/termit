@@ -12,6 +12,7 @@ Source1:	%{name}.desktop
 Source2:	%{name}.png
 URL:		http://code.google.com/p/termit/wiki/TermIt
 BuildRequires:	cmake >= 2.6.1
+BuildRequires:	gettext-devel
 BuildRequires:	gtk+2-devel >= 2:2.8
 BuildRequires:	lua51-devel
 BuildRequires:	perl-base
