@@ -2,22 +2,22 @@ Summary:	TermIt - terminal emulator based on the vte library, extensible via Lua
 Summary(hu.UTF-8):	TermIt - vte könyvtáron alapuló terminál emulátor, Lua nyelven keresztül bővíthető
 Summary(pl.UTF-8):	TermIt - emulator terminala oparty na bibliotece vte, rozszerzalny przez Lua
 Name:		termit
-Version:	2.3.0
+Version:	2.4.0
 Release:	0.1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://termit.googlecode.com/files/%{name}-%{version}.tar.bz2
-# Source0-md5:	b2f3a8a5ec0dd469ca6b9e27a0323619
+Source0:	http://cloud.github.com/downloads/nonstop/termit/%{name}-%{version}.tar.bz2
+# Source0-md5:	be0e5180bc977494349bb79cb1d7fd06
 Source1:	%{name}.desktop
 Source2:	%{name}.png
-URL:		http://code.google.com/p/termit/wiki/TermIt
+URL:		http://wiki.github.com/nonstop/termit/
 BuildRequires:	cmake >= 2.6.1
 BuildRequires:	gettext-devel
 BuildRequires:	gtk+2-devel >= 2:2.8
 BuildRequires:	lua51-devel
 BuildRequires:	perl-base
 BuildRequires:	pkgconfig
-BuildRequires:	vte-devel >= 0.12
+BuildRequires:	vte-devel >= 0.17.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -86,7 +86,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc ChangeLog TODO doc/README doc/init.lua.example doc/lua_api.txt
+%doc ChangeLog TODO doc/README doc/rc.lua.example doc/lua_api.txt
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
 %{_desktopdir}/%{name}.desktop
