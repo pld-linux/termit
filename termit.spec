@@ -10,6 +10,7 @@ Source0:	http://carme.pld-linux.org/~uzsolt/sources/%{name}-%{version}.tar.bz2
 # Source0-md5:	59d106e1c35bb558aa15b8f6c5eb8d2b
 Source1:	%{name}.desktop
 Source2:	%{name}.png
+Patch0:		%{name}-language.patch
 URL:		http://wiki.github.com/nonstop/termit/
 BuildRequires:	cmake >= 2.6.1
 BuildRequires:	gettext-devel
@@ -59,10 +60,10 @@ $HOME/.config/termit/init.lua (przykład znajduje się w dokumentacji).
 
 %prep
 %setup -q
+%patch0 -p0
 
 %build
 %cmake . \
-	-DCMAKE_CXX_COMPILER_WORKS=1 -DCMAKE_CXX_COMPILER="%{__cc}" \
 	-DCMAKE_INSTALL_PREFIX:PATH="%{_prefix}" \
 	-DCMAKE_VERBOSE_MAKEFILE=ON
 # fix --as-needed issue - ref: http://pld-linux.org/DevelopingPLD/AdvancedDeveloping/FixingAsNeeded
