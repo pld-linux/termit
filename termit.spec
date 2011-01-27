@@ -62,6 +62,7 @@ $HOME/.config/termit/init.lua (przykład znajduje się w dokumentacji).
 
 %build
 %cmake . \
+	-DCMAKE_CXX_COMPILER_WORKS=1 -DCMAKE_CXX_COMPILER="%{__cc}" \
 	-DCMAKE_INSTALL_PREFIX:PATH="%{_prefix}" \
 	-DCMAKE_VERBOSE_MAKEFILE=ON
 # fix --as-needed issue - ref: http://pld-linux.org/DevelopingPLD/AdvancedDeveloping/FixingAsNeeded
