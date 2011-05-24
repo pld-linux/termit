@@ -16,7 +16,7 @@ Patch2:		gdkkeysyms-compat.patch
 URL:		http://wiki.github.com/nonstop/termit/
 BuildRequires:	cmake >= 2.6.1
 BuildRequires:	gettext-devel
-BuildRequires:	gtk+2-devel >= 2:2.8
+BuildRequires:	gtk+3-devel
 BuildRequires:	lua51-devel
 BuildRequires:	perl-base
 BuildRequires:	pkgconfig
