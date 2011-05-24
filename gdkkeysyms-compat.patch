@@ -1,0 +1,30 @@
+--- termit-2.8.0-orig/src/keybindings.c	2011-05-22 12:28:13.755038982 +0200
++++ termit-2.8.0/src/keybindings.c	2011-05-24 09:27:14.761721984 +0200
+@@ -15,6 +15,7 @@
+ #include <string.h>
+ 
+ #include <gdk/gdkkeysyms.h>
++#include <gdk/gdkkeysyms-compat.h>
+ 
+ #include <lua.h>
+ #include <lualib.h>
+--- termit-2.8.0-orig/src/callbacks.c	2011-05-22 12:28:13.751705496 +0200
++++ termit-2.8.0/src/callbacks.c	2011-05-24 09:37:47.150745044 +0200
+@@ -15,6 +15,7 @@
+ #include <stdint.h>
+ #include <string.h>
+ #include <gdk/gdkkeysyms.h>
++#include <gdk/gdkkeysyms-compat.h>
+ 
+ #include "termit.h"
+ #include "configs.h"
+--- termit-2.8.0-orig/src/termit_preferences.c	2011-05-22 12:28:13.758372468 +0200
++++ termit-2.8.0/src/termit_preferences.c	2011-05-24 09:38:47.310173263 +0200
+@@ -14,6 +14,7 @@
+ #include <string.h>
+ #include <gtk/gtk.h>
+ #include <gdk/gdkkeysyms.h>
++#include <gdk/gdkkeysyms-compat.h>
+ #include <config.h>
+ #include "termit.h"
+ #include "termit_style.h"
