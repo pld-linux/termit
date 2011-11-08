@@ -10,9 +10,7 @@ Source0:	http://github.com/downloads/nonstop/termit/%{name}-%{version}.tar.bz2
 # Source0-md5:	ca5360fef23d5ff6b29970220e755caf
 Source1:	%{name}.desktop
 Source2:	%{name}.png
-Patch0:		%{name}-language.patch
-Patch1:		%{name}-as-needed.patch
-Patch2:		gdkkeysyms-compat.patch
+Patch0:		gdkkeysyms-compat.patch
 URL:		http://wiki.github.com/nonstop/termit/
 BuildRequires:	cmake >= 2.6.1
 BuildRequires:	gettext-devel
@@ -62,9 +60,7 @@ $HOME/.config/termit/init.lua (przykład znajduje się w dokumentacji).
 
 %prep
 %setup -q
-# %patch0 -p0
-# %patch1 -p0
-%patch2 -p1
+%patch0 -p1
 %{__sed} -i "s@vte>=0.17@vte-2.90>=0.20@g" src/CMakeLists.txt
 %{__sed} -i "s@GTK_OBJECT@@g" src/{callbacks,termit_preferences}.c
 
