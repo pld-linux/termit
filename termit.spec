@@ -2,12 +2,12 @@ Summary:	TermIt - terminal emulator based on the vte library, extensible via Lua
 Summary(hu.UTF-8):	TermIt - vte könyvtáron alapuló terminál emulátor, Lua nyelven keresztül bővíthető
 Summary(pl.UTF-8):	TermIt - emulator terminala oparty na bibliotece vte, rozszerzalny przez Lua
 Name:		termit
-Version:	2.9.2
+Version:	2.9.3
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://github.com/downloads/nonstop/termit/%{name}-%{version}.tar.bz2
-# Source0-md5:	ca5360fef23d5ff6b29970220e755caf
+# Source0-md5:	fee0c7c1819693af2b246bd290b4fb69
 Source1:	%{name}.desktop
 Source2:	%{name}.png
 Patch0:		gdkkeysyms-compat.patch
