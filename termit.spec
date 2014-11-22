@@ -18,7 +18,8 @@ BuildRequires:	gtk+3-devel
 BuildRequires:	lua52-devel
 BuildRequires:	perl-base
 BuildRequires:	pkgconfig
-BuildRequires:	vte-devel >= 0.17.1
+BuildRequires:	vte2.90-devel
+#BuildRequires:	vte-devel >= 0.17.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
