@@ -13,7 +13,7 @@ Source2:	%{name}.png
 Patch0:		gdkkeysyms-compat.patch
 URL:		http://wiki.github.com/nonstop/termit/
 BuildRequires:	cmake >= 2.6.1
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	gtk+3-devel
 BuildRequires:	lua52-devel
 BuildRequires:	perl-base
