@@ -61,7 +61,7 @@ $HOME/.config/termit/init.lua (przykład znajduje się w dokumentacji).
 
 %prep
 %setup -q
-%patch0 -p1
+%patch -P0 -p1
 %{__sed} -i "s@vte>=0.17@vte-2.90>=0.20@g" src/CMakeLists.txt
 %{__sed} -i "s@GTK_OBJECT@@g" src/{callbacks,termit_preferences}.c
 
